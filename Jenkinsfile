@@ -16,7 +16,7 @@ pipeline{
 		}
 		stage('build'){
 			steps{
-				sh 'docker build multibranch-sample:latest .'
+				sh 'docker build --tag multibranch-sample:latest .'
 				sh 'docker multibranch-sample:latest ${env.CI_REGISTRY}/multibranch-sample:latest'				
 			}
 		}
