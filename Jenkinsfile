@@ -14,5 +14,8 @@ pipeline{
 				echo "hello development"
 			}
 		}
+		stage('build'){
+			sh 'sudo docker build multibranch-sample .'
+		}
 	}
 }
