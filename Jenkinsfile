@@ -23,7 +23,7 @@ pipeline{
 		stage('publish'){
 			steps{
 				sh "echo ${env.CI_PASSWORD} | docker login -u ${env.CI_USER} --password-stdin ${env.CI_REGISTRY}"
-				sh "docker ${env.CI_REGISTRY}/multibranch-sample:latest"
+				sh "docker push ${env.CI_REGISTRY}/multibranch-sample:latest"
 			}
 		}
 	}
